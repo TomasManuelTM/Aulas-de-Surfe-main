@@ -160,60 +160,200 @@ body{
 {
 	float: left;
 	width: 100%;
-
 	padding: 4em 1em;
+	text-align: center;
 
-	.hgroup
+	.sobre-items
 	{
-		width: 800px;
-		text-align: center;
-		margin: 0 auto;
-
-		h2
+		padding: 3em 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		div
 		{
-			font-family: circe;
-			font-weight: 900;
-			line-height: 5px;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-
-			&::after
-			{
-				content:"";
-				width: 30px;
-				padding: 2px;
-				display: block;
-				margin: 20px auto;
-				border-radius: 5px;
-				background: #ccc;
-			}
-		}
-		p
-		{
-			line-height: 20pt;
-		}
-		span
-		{
+			padding: 1em;
 			text-align: center;
-			a
+			border-right: 2px solid #ccc;
+
+			h3
 			{
-				color: #ccc;
-				display: table;
-				margin: 20px auto;
 				font-family: circe;
-				border-radius: 8px;
-				padding: 10px 30px;
-				text-decoration: none;
-				border: 1px solid #666;
+				font-weight: 900;
+				line-height: 5px;
+				letter-spacing: 3px;
+				text-transform: capitalize;
+			}
+			p
+			{
+				line-height: 20pt;
+			}
+			span
+			{
+				text-align: center;
+			}
+
+			&:last-child
+			{
+				border-right: none;
 			}
 		}
 	}
 }
 
-.flex-3
+
+.catalogo-contacto
+{
+	float: left;
+	width: 100%;
+	padding: 4em 1em;
+	text-align: center;
+	background: #e23737;
+
+
+	form
+	{
+		margin: 3em auto;
+		width: calc(100vw - 55vw);
+
+		div
+		{
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 20px;
+
+			input, textarea
+			{
+				outline: none;
+				border: none;
+				padding: 10px;
+				font-weight: 700;
+				border-radius: 5px;
+
+				&:focus
+				{
+					color: #fff;
+					font-weight: 500;
+					background: #333;
+				}
+			}
+
+			&:last-child
+			{
+				margin: 10px 0;
+				grid-template-columns: 1fr;
+				grid-gap: 10px;
+
+				textarea
+				{
+					height: 200px;
+				}
+			}
+		}
+	}
+}
+
+.catalogo-informacao
+{
+	float: left;
+	width: 100%;
+	padding: 3em 2em 2em;
+	border-top: 3px solid #e23737;
+
+
+	.flex-colums
+	{
+		
+	}
+	.form-subscrever
+	{
+		padding: 0px;
+
+		h3
+		{
+			// font-size: 10pt;
+			// line-height: 0px;
+		}
+
+		form
+		{
+			input
+			{
+				color: #333;
+				border: none;
+				width: 250px;
+				outline: none;
+				padding: 10px;
+				border-radius: 3px;
+
+				&:focus
+				{
+					color: #fff;
+					font-weight: 500;
+					background: #333;
+				}
+			}
+			button
+			{
+				border: none;
+				outline: none;
+				padding: 10px;
+				cursor: pointer;
+				font-weight: 900;
+
+				&:hover
+				{
+					color: #fff;
+					background: #999;
+				}
+			}
+		}
+	}
+	.div-contato
+	{
+		div
+		{
+			p
+			{
+				font-weight: 900;
+
+				span
+				{
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	.copy
+	{
+		margin: 10px 0;
+		line-height: 5px;
+		text-align: center;
+
+		&::after
+		{
+			content:"";
+			width: 3px;
+			padding: 2px;
+			display: block;
+			margin: 15px auto;
+			border-radius: 5px;
+			background: #333;
+		}
+
+		&:last-child
+		{
+			&::after
+			{
+				margin: 0px;
+				display: none;
+			}
+		}
+	}
+}
+
+
+.flex-colums
 {
 	display: flex;
-	align-items: center;
 	flex-direction: row;
 	justify-content: space-between;
 }
@@ -223,4 +363,25 @@ body{
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+}
+
+.font-titulo
+{
+	font-family: circe;
+	font-weight: 900;
+	line-height: 5px;
+	font-size: 20pt;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+
+	&::after
+	{
+		content:"";
+		width: 15px;
+		padding: 2px;
+		display: block;
+		margin: 20px auto;
+		border-radius: 5px;
+		background: #666;
+	}
 }

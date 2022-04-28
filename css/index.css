@@ -143,58 +143,161 @@ body {
   float: left;
   width: 100%;
   padding: 4em 1em;
-}
-
-.catalogo-sobre .hgroup {
-  width: 800px;
   text-align: center;
-  margin: 0 auto;
 }
 
-.catalogo-sobre .hgroup h2 {
+.catalogo-sobre .sobre-items {
+  padding: 3em 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.catalogo-sobre .sobre-items div {
+  padding: 1em;
+  text-align: center;
+  border-right: 2px solid #ccc;
+}
+
+.catalogo-sobre .sobre-items div h3 {
   font-family: circe;
   font-weight: 900;
   line-height: 5px;
   letter-spacing: 3px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
-.catalogo-sobre .hgroup h2::after {
-  content: "";
-  width: 30px;
-  padding: 2px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 5px;
-  background: #ccc;
-}
-
-.catalogo-sobre .hgroup p {
+.catalogo-sobre .sobre-items div p {
   line-height: 20pt;
 }
 
-.catalogo-sobre .hgroup span {
+.catalogo-sobre .sobre-items div span {
   text-align: center;
 }
 
-.catalogo-sobre .hgroup span a {
-  color: #ccc;
-  display: table;
-  margin: 20px auto;
-  font-family: circe;
-  border-radius: 8px;
-  padding: 10px 30px;
-  text-decoration: none;
-  border: 1px solid #666;
+.catalogo-sobre .sobre-items div:last-child {
+  border-right: none;
 }
 
-.flex-3 {
+.catalogo-contacto {
+  float: left;
+  width: 100%;
+  padding: 4em 1em;
+  text-align: center;
+  background: #e23737;
+}
+
+.catalogo-contacto form {
+  margin: 3em auto;
+  width: calc(100vw - 55vw);
+}
+
+.catalogo-contacto form div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.catalogo-contacto form div input, .catalogo-contacto form div textarea {
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.catalogo-contacto form div input:focus, .catalogo-contacto form div textarea:focus {
+  color: #fff;
+  font-weight: 500;
+  background: #333;
+}
+
+.catalogo-contacto form div:last-child {
+  margin: 10px 0;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.catalogo-contacto form div:last-child textarea {
+  height: 200px;
+}
+
+.catalogo-informacao {
+  float: left;
+  width: 100%;
+  padding: 3em 2em 2em;
+  border-top: 3px solid #e23737;
+}
+
+.catalogo-informacao .form-subscrever {
+  padding: 0px;
+}
+
+.catalogo-informacao .form-subscrever form input {
+  color: #333;
+  border: none;
+  width: 250px;
+  outline: none;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.catalogo-informacao .form-subscrever form input:focus {
+  color: #fff;
+  font-weight: 500;
+  background: #333;
+}
+
+.catalogo-informacao .form-subscrever form button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.catalogo-informacao .form-subscrever form button:hover {
+  color: #fff;
+  background: #999;
+}
+
+.catalogo-informacao .div-contato div p {
+  font-weight: 900;
+}
+
+.catalogo-informacao .div-contato div p span {
+  font-weight: 400;
+}
+
+.catalogo-informacao .copy {
+  margin: 10px 0;
+  line-height: 5px;
+  text-align: center;
+}
+
+.catalogo-informacao .copy::after {
+  content: "";
+  width: 3px;
+  padding: 2px;
+  display: block;
+  margin: 15px auto;
+  border-radius: 5px;
+  background: #333;
+}
+
+.catalogo-informacao .copy:last-child::after {
+  margin: 0px;
+  display: none;
+}
+
+.flex-colums {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -215,5 +318,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.font-titulo {
+  font-family: circe;
+  font-weight: 900;
+  line-height: 5px;
+  font-size: 20pt;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.font-titulo::after {
+  content: "";
+  width: 15px;
+  padding: 2px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 5px;
+  background: #666;
 }
 /*# sourceMappingURL=index.css.map */
