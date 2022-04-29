@@ -33,13 +33,15 @@ body{
 
 .header 
 {
-	width: 95%;
+	width: 100%;
 	height: 90px;
+	display: none;
 	padding: 10px 2em;
 	position: fixed;
     top:0;
     left: 0;
 	z-index: 1;
+	justify-content: space-between;
 	background-color: #61e6f0fb;
 	border-bottom: 7px solid #e23737;
 
@@ -84,58 +86,68 @@ body{
 
 .catalogo-exposicao
 {
-	float: left;
-	clear: both;
-	width: 100vw;
-	height: 80vh;
-	// overflow: hidden;
+	flex: 1;
+	overflow: hidden;
 
 
-	.item-exposicao
+	.catalogo-exposicao-carousel
 	{
-
-		// right: 150px;
-		float: left;
+		
 		width: 100%;
-		height: 100%;
+		height: 600px;
+		display: flex;
 		overflow: hidden;
-		position: relative;
-		display: inline-block;
+		border-radius: 6px;
+		transition: all ease .3s;
 
-
-		.texto
+		.item-exposicao
 		{
-			z-index: 1;
-			width: 100%;
+	
+			width: 100vw;
 			height: 100%;
-			padding: 5em;
+			overflow: hidden;
 			position: relative;
-			background: rgba(0, 0, 0, .1);
-
-			h1
+	
+	
+			.texto
 			{
-				font-size: 3.6pc;
-				font-weight: 900;
-				line-height: 10px;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+				padding: 5em;
+				position: absolute;
+				background: rgba(0, 0, 0, .1);
+	
+				h1
+				{
+					font-size: 3.6pc;
+					font-weight: 900;
+					line-height: 10px;
+				}
+				p
+				{
+					font-size: 14pt;
+				}
 			}
-			p
+			img
 			{
-				font-size: 14pt;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: inherit;
+				object-fit: cover;
+				position: relative;
 			}
-		}
-		img
-		{
-			top: 0px;
-			left: 0px;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			position: absolute;
 		}
 	}
+
+
 	.catalogo-exposicao-btn
 	{
 		top: 0px;
+		z-index: 2;
 		float: left;
 		right: 0px;
 		width: 100%;
@@ -147,11 +159,11 @@ body{
 
 		i
 		{
-			padding: 5px;
+			padding: 8px;
 			margin: 0 20px;
 			cursor: pointer;
-			border-radius: 8px;	
-			background:rgba(0, 0, 0, .3);
+			border-radius: 3px;	
+			background:rgba(0, 0, 0, .4);
 		}
 	}
 }
@@ -160,7 +172,7 @@ body{
 {
 	float: left;
 	width: 100%;
-	padding: 4em 1em;
+	padding: 4em 1em 3em;
 	text-align: center;
 
 	.sobre-items
@@ -199,6 +211,33 @@ body{
 	}
 }
 
+.catalogo-galeria
+{
+	float: left;
+	width: 100%;
+	display: block;
+	padding: 4em 2em;
+	text-align: center;
+
+	.catalogo-items
+	{
+		width: 100%;
+		display: grid;
+		padding: 3em 0;
+		overflow: hidden;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 30px;
+
+
+		img
+		{
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			border-radius: 5px;
+		}
+	}
+}
 
 .catalogo-contacto
 {
@@ -206,7 +245,7 @@ body{
 	width: 100%;
 	padding: 4em 1em;
 	text-align: center;
-	background: #e23737;
+	background: #ccc;
 
 
 	form
@@ -219,6 +258,7 @@ body{
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-gap: 20px;
+			margin: 10px 0;
 
 			input, textarea
 			{
@@ -236,15 +276,31 @@ body{
 				}
 			}
 
+			&.gr-index
+			{
+				grid-template-columns: 1fr;
+
+				textarea
+				{
+					height: 200px;
+				}
+			}
 			&:last-child
 			{
 				margin: 10px 0;
 				grid-template-columns: 1fr;
 				grid-gap: 10px;
 
-				textarea
+				button
 				{
-					height: 200px;
+					outline: none;
+					border: none;
+					padding: 10px;
+					font-weight: 900;
+					text-align: center;
+					border-radius: 5px;
+					cursor: pointer;
+					text-transform: uppercase;
 				}
 			}
 		}
@@ -259,10 +315,6 @@ body{
 	border-top: 3px solid #e23737;
 
 
-	.flex-colums
-	{
-		
-	}
 	.form-subscrever
 	{
 		padding: 0px;
@@ -283,6 +335,7 @@ body{
 				outline: none;
 				padding: 10px;
 				border-radius: 3px;
+				border-bottom: 1px solid #666;
 
 				&:focus
 				{
@@ -318,6 +371,14 @@ body{
 				span
 				{
 					font-weight: 400;
+				}
+				a
+				{
+					img
+					{
+						width: 25px;
+						height: 25px;
+					}
 				}
 			}
 		}
@@ -358,12 +419,7 @@ body{
 	justify-content: space-between;
 }
 
-.align-center
-{
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
+
 
 .font-titulo
 {
@@ -383,5 +439,102 @@ body{
 		margin: 20px auto;
 		border-radius: 5px;
 		background: #666;
+	}
+}
+
+
+@media (max-width: 680px)
+{
+	.catalogo-exposicao
+	{
+		.item-exposicao
+		{
+			.texto
+			{
+				padding: 3em;
+
+				h1
+				{
+					font-size: 2pc;
+				}
+				p
+				{
+					font-size: 16pt;
+				}
+			}
+		}
+    }
+	.catalogo-galeria
+	{
+		text-align: center;
+
+		.catalogo-items
+		{
+			grid-template-columns: 1fr;
+		}
+	}
+	.catalogo-sobre
+	{
+		padding: 4em 1em;
+		text-align: center;
+
+		.sobre-items
+		{
+			
+			grid-template-columns: 1fr;
+
+			div
+			{
+				border-right: none;
+				border-bottom: 2px solid #ccc;
+
+				&:last-child
+				{
+					border-right: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.catalogo-contacto
+	{
+		padding: 4em 0em;
+		background: #ccc;
+
+		form
+		{
+			width: calc(100vw - 25vw);
+
+		}
+	}
+
+	.catalogo-informacao
+	{
+		.flex-colums
+		{
+			padding: 2em 0;
+			flex-direction: column;
+
+			.form-subscrever
+			{
+
+				form
+				{
+					input
+					{
+						width: 340px;
+						color: #fff;
+						font-weight: 500;
+						background: #333;
+					}
+					button
+					{
+						color: #fff;
+						background: #999;
+					}
+				}
+			}
+		}
 	}
 }
